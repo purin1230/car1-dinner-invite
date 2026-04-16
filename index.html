@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>主管餐敘邀請函</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    background: #f5f5f5;
+}
+
+.container {
+    max-width: 640px;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.invite-img {
+    width: 100%;
+    display: block;
+}
+
+.content {
+    padding: 20px;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.info {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.map-btn {
+    display: block;
+    text-align: center;
+    background: #1a73e8;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+form select, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fff;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #000;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #888;
+    font-size: 14px;
+}
+
+.qr {
+    text-align: center;
+    padding: 20px;
+}
+
+.qr img {
+    width: 140px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <img src="主管餐敘邀請.png" class="invite-img">
+
+    <div class="content">
+
+        <div class="title">主管餐敘出席回覆</div>
+
+        <div class="info">
+            📅 2026/04/24（五）19:00<br>
+            📍 莎瓦迪卡海鮮·泰（台北市中山區松江路8號）
+        </div>
+
+        <a class="map-btn" href="https://maps.google.com/?q=莎瓦迪卡海鮮泰+松江路8號" target="_blank">
+            📍 開啟 Google Map 導航
+        </a>
+
+        <form action="https://formsubmit.co/emma12301230@gmail.com" method="POST">
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://thankyou.page">
+
+            <label>姓名 *</label>
+            <select name="姓名" required>
+                <option value="">請選擇</option>
+                <option>黃永吉 處長</option>
+                <option>陳春福 處長</option>
+                <option>張建業 協理</option>
+                <option>蔡佩真 協理</option>
+                <option>張世冠 協理</option>
+                <option>管孝欽 協理</option>
+                <option>郭春蘭 協理</option>
+                <option>黎振宜 財務長</option>
+                <option>卓秉祐 經理</option>
+                <option>袁昊新 協理</option>
+                <option>李辰曦 行銷長</option>
+                <option>張漢伯 副處長</option>
+                <option>林哲宇 經理</option>
+                <option>陳紀宏 特助</option>
+                <option>陳仲儒 資訊長</option>
+                <option>陳建安 經理</option>
+                <option>陳柏蒼 經理</option>
+            </select>
+
+            <label>是否出席 *</label>
+            <select name="出席狀況" required>
+                <option value="">請選擇</option>
+                <option value="參加">參加</option>
+                <option value="不克出席">不克出席</option>
+            </select>
+
+            <label>飲食禁忌 / 特殊需求</label>
+            <textarea name="飲食需求" placeholder="例如：不吃牛、海鮮過敏"></textarea>
+
+            <button type="submit" class="submit-btn">送出回覆</button>
+
+        </form>
+
+        <div class="footer">
+            車麗屋汽車百貨 敬邀
+        </div>
+
+    </div>
+
+    <div class="qr">
+        <p>📱 掃描填寫</p>
+        <img id="qrCode">
+    </div>
+
+</div>
+
+<script>
+    const url = window.location.href;
+    document.getElementById("qrCode").src =
+        "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(url);
+</script>
+
+</body>
+</html>
